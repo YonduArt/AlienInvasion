@@ -15,7 +15,7 @@ class AlienInvasion():
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption(self.settings.title_name)
 
-        self.ship = Ship(screen)
+        self.ship = Ship(self.screen)
 
 
     def main(self):
