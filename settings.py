@@ -5,3 +5,4 @@ class Settings():
         self.screen_height = 800
         self.bg_color = (255, 255, 255)
         self.title_name = 'Alien Invasion'
+        self.ship_speed = 0.75
