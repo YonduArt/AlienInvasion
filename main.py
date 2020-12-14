@@ -14,7 +14,6 @@ class AlienInvasion():
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption(self.settings.title_name)
         self.ship = Ship(self.screen, self.settings)
-        info = pygame.display.Info() // # TODO
 
 
     def main(self):
@@ -37,7 +36,8 @@ class AlienInvasion():
                 if event.type == pygame.KEYUP:
                     self._check_events_keyup(event)
 
-    def _check_events_keydown(self, event, info):
+    def _check_events_keydown(self, event):
+        '''Подфункция проверяет нажатие клавиши'''
         if event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_RIGHT:
@@ -45,13 +45,14 @@ class AlienInvasion():
         elif event.key == pygame.K_q:
             sys.exit()
         elif event.key == pygame.K_F11:
-            self.screen = pygame.display.set_mode((info.current_w, info.current_h)) # TODO
+            self.screen = pygame.display.set_mode((1920, 1080)) # TODO
         elif event.key == pygame.K_F12:
             self.screen = pygame.display.set_mode(
                 (self.settings.screen_width, self.settings.screen_height))
 
 
     def _check_events_keyup(self, event):
+        '''Подфункция проверяет отпускание клавиши'''
         if event.key == pygame.K_LEFT:
             self.ship.moving_left = False
         elif event.key == pygame.K_RIGHT:
